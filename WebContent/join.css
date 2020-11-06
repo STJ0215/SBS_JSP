@@ -1,0 +1,43 @@
+@charset "EUC-KR";
+
+
+body {
+	
+}
+
+.wrap {
+	width: 550px;
+	text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+table {
+	
+}
+
+td {
+	height: 50px;
+	paddig-left: 10px;
+	padding-right: 10px;
+}
+
+h1 {
+	color: gray;
+}
+
+span {
+	font-size: 5px;
+	color: gray;
+}
+
+.title {
+	border-left: 3px solid lightgray;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.essential {
+	font-weight: bold;
+	color: red;
+}
