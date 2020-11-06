@@ -41,3 +41,44 @@ span {
 	font-weight: bold;
 	color: red;
 }
+
+.btn_fin {
+	width: 50px;
+	height: 25px;
+}
+
+select {
+	height: 21px;
+}
+
+input[type=submit] {
+	width: 150px;
+	height: 50px;
+	background-color: rgb(50, 50, 50);
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+input[type=button]:nth-child(2) {
+	background-color: rgb(50, 50, 50);
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+input[type=button]:nth-child(3) {
+	background-color: rgb(50, 50, 50);
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+input[type=button]:nth-child(4) {
+	width: 150px;
+	height: 50px;
+	background-color: rgb(50, 50, 50);
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
