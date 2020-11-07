@@ -10,7 +10,19 @@
 	<body>
 		<h3>회원정보 GET</h3>
 		
-		<form action="queryTest" method="get">
+		<form action="queryTest" method="GET">
+			ID : <input type="text" name="id"> <br>
+			PW : <input type="password" name="pw"> <br>
+			이름 : <input type="text" name="name"> <br>
+			<br>
+			<input type="submit" value="전송">
+			<input type="reset" value="초기화">
+		</form>
+		
+		
+		<h3>회원정보 POST</h3>
+		
+		<form action="queryTest" method="POST">
 			ID : <input type="text" name="id"> <br>
 			PW : <input type="password" name="pw"> <br>
 			이름 : <input type="text" name="name"> <br>

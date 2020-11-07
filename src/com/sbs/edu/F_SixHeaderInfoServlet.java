@@ -43,6 +43,5 @@ public class F_SixHeaderInfoServlet extends HttpServlet {
 		out.print("</html>");
 		
 		out.close();
-	}
-	
+	}	
 }
