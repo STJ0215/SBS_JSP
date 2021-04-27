@@ -11,12 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/context")
-public class L_ServletContext extends HttpServlet {
+public class L_1_ServletContext extends HttpServlet {
 	ServletContext sc;
 	/*
-	// 1. Init ¸Ş¼­µå¸¦ ÀçÁ¤ÀÇÇÏ¿© ÃßÃâÇÏ´Â ¹æ¹ı
+	// 1. Init ë©”ì„œë“œë¥¼ ì¬ì •ì˜í•˜ì—¬ ì¶”ì¶œí•˜ëŠ” ë°©ë²•
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		sc = config.getServletContext();
@@ -35,7 +34,7 @@ public class L_ServletContext extends HttpServlet {
 	*/
 	
 	/*
-	// 2. HttpServlet À» ÅëÇØ ÃßÃâÇÏ´Â ¹æ¹ı
+	// 2. HttpServlet ì„ í†µí•´ ì¶”ì¶œí•˜ëŠ” ë°©ë²•
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html; charset=UTF-8");
@@ -48,7 +47,7 @@ public class L_ServletContext extends HttpServlet {
 		out.close();
 	}
 	*/
-	
+	// ServletContext ë³€ìˆ˜ì„¤ì •
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html; charset=UTF-8");
@@ -57,12 +56,14 @@ public class L_ServletContext extends HttpServlet {
 		ServletContext sc = this.getServletContext();
 		String location = sc.getInitParameter("contextConfig");
 		
-		out.print("loction : " + location + "<br>");
+		out.print("location : " + location + "<br>");
 		out.print("Servlet Version : " + sc.getMajorVersion() + "." + sc.getMinorVersion() + "<br>");
 		out.print("Server Info : " + sc.getServerInfo() + "<br>");
-		out.print("À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼Ç °æ·Î : " + sc.getContextPath() + "<br>");
-		out.print("À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼Ç ÀÌ¸§ : " + sc.getServletContextName() + "<br>");
-		out.print("½ÇÁ¦ ÆÄÀÏ °æ·Î  : " + sc.getRealPath("/index.jsp"));
+		out.print("ì›¹ ì• í”Œë¦¬ì¼€ì´ì…˜ ê²½ë¡œ : " + sc.getContextPath() + "<br>");
+		out.print("ì›¹ ì• í”Œë¦¬ì¼€ì´ì…˜ ì´ë¦„ : " + sc.getServletContextName() + "<br>");
+		out.print("ì‹¤ì œ íŒŒì¼ ê²½ë¡œ  : " + sc.getRealPath("/index.jsp"));
+		
+		sc.log("ë¡œê·¸ê¸°ë¡!");
 		
 		out.close();
 	}

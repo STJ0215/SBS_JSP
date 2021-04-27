@@ -8,51 +8,50 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
-
 /*
- * ServletÀÌ µÇ±â À§ÇØ¼­´Â HttpServlet »ó¼Ó ÇÊ¿ä
+ * Servletì´ ë˜ê¸° ìœ„í•´ì„œëŠ” HttpServlet ìƒì† í•„ìš”
  * 
- * ¼­ºí¸´ ½ÇÇà ¼ø¼­
- * ¼­ºí¸´ÀÇ ½ÇÇà ¼ø¼­¸¦ ÀÌÇØÇÏ·Á¸é IoC¶ó´Â °³³äÀ» ¾Ë¾Æ¾ß ÇÑ´Ù.
- * JAVA SE ÇÁ·Î±×·¥Àº °³¹ßÀÚ°¡ main() ¸Þ¼­µå ¾È¿¡ ±¸ÇöÇÑ ¼ø¼­´ë·Î ½ÇÇàµÈ´Ù.
- * Áï ÇÁ·Î±×·¥ÀÌ ½ÇÇàµÇ´Â ¼ø¼­¸¦ °³¹ßÀÚ°¡ Á¦¾îÇÑ´Ù.
- * ±×·¯³ª JAVA EE ±â¹Ý ÇÁ·Î±×·¥Àº ½ÇÇàÀÇ Èå¸§À» °³¹ßÀÚ°¡ Á¦¾îÇÏ´Â °ÍÀÌ ¾Æ´Ñ
- * ¾î¶² ¼ø¼­·Î µ¿ÀÛ½ÃÅ°´ÂÁö ¾Ë°í ÇØ´ç ¼ø¼­¿¡ ¸Â°Ô °³¹ßÇÏ¿©¾ß ÇÑ´Ù.
+ * ì„œë¸”ë¦¿ ì‹¤í–‰ ìˆœì„œ
+ * ì„œë¸”ë¦¿ì˜ ì‹¤í–‰ ìˆœì„œë¥¼ ì´í•´í•˜ë ¤ë©´ IoCë¼ëŠ” ê°œë…ì„ ì•Œì•„ì•¼ í•œë‹¤.
+ * JAVA SE í”„ë¡œê·¸ëž¨ì€ ê°œë°œìžê°€ main() ë©”ì„œë“œ ì•ˆì— êµ¬í˜„í•œ ìˆœì„œëŒ€ë¡œ ì‹¤í–‰ëœë‹¤.
+ * ì¦‰ í”„ë¡œê·¸ëž¨ì´ ì‹¤í–‰ë˜ëŠ” ìˆœì„œë¥¼ ê°œë°œìžê°€ ì œì–´í•œë‹¤.
+ * ê·¸ëŸ¬ë‚˜ JAVA EE ê¸°ë°˜ í”„ë¡œê·¸ëž¨ì€ ì‹¤í–‰ì˜ íë¦„ì„ ê°œë°œìžê°€ ì œì–´í•˜ëŠ” ê²ƒì´ ì•„ë‹Œ
+ * ì–´ë–¤ ìˆœì„œë¡œ ë™ìž‘ì‹œí‚¤ëŠ”ì§€ ì•Œê³  í•´ë‹¹ ìˆœì„œì— ë§žê²Œ ê°œë°œí•˜ì—¬ì•¼ í•œë‹¤.
  * 
- * ÀÌÃ³·³ °³¹ßÀÚ°¡ ¾Æ´Ñ Á¦ 3ÀÚ°¡ ÇÁ·Î±×·¥ÀÇ ½ÇÇà Èå¸§À» Á¦¾îÇÏ´Â °ÍÀ»
- * IoC(Inversion of Control) - 'Á¦¾îÀÇ ¿ªÀü' ÀÌ¶ó ÇÑ´Ù.
+ * ì´ì²˜ëŸ¼ ê°œë°œìžê°€ ì•„ë‹Œ ì œ 3ìžê°€ í”„ë¡œê·¸ëž¨ì˜ ì‹¤í–‰ íë¦„ì„ ì œì–´í•˜ëŠ” ê²ƒì„
+ * IoC(Inversion of Control) - 'ì œì–´ì˜ ì—­ì „' ì´ë¼ í•œë‹¤.
  */
 
 /*
- * web.xml ÆÄÀÏ·Î ¼³Á¤ÇÏ´Â ¹æ½ÄÀº ¿©·¯°³ÀÇ ¼­ºí¸´À» ÅÂ±×·Î µî·ÏÇÏ±â ¶§¹®¿¡ ÀüÃ¼ÀûÀÎ °ü¸®°¡ ½±´Ù.
- * ¶ÇÇÑ url°ªÀÌ º¯°æµÇ¾î¾ß ÇÒ ¶§´Â ¼Ò½º¸¦ ¼öÁ¤ÇÏÁö ¾Ê°íµµ web.xml¿¡¼­ ½±°Ô º¯°æÇÒ ¼ö ÀÖ´Ù.
+ * web.xml íŒŒì¼ë¡œ ì„¤ì •í•˜ëŠ” ë°©ì‹ì€ ì—¬ëŸ¬ê°œì˜ ì„œë¸”ë¦¿ì„ íƒœê·¸ë¡œ ë“±ë¡í•˜ê¸° ë•Œë¬¸ì— ì „ì²´ì ì¸ ê´€ë¦¬ê°€ ì‰½ë‹¤.
+ * ë˜í•œ urlê°’ì´ ë³€ê²½ë˜ì–´ì•¼ í•  ë•ŒëŠ” ì†ŒìŠ¤ë¥¼ ìˆ˜ì •í•˜ì§€ ì•Šê³ ë„ web.xmlì—ì„œ ì‰½ê²Œ ë³€ê²½í•  ìˆ˜ ìžˆë‹¤.
  * 
- * ±×¸®°í @WebServlet (¾î³ëÅ×ÀÌ¼Ç) ¼³Á¤ ¹æ½ÄÀº ¼³Á¤ÆÄÀÏ ¾øÀÌ ÀÚ¹Ù ¼Ò½º¿¡¼­ ½±°Ô url ÆÐÅÏÀ» ÁöÁ¤ÇÒ ¼ö ÀÖ´Ù.
- * ±×·¯³ª ÇÏ³ªÀÇ ÀÚ¹Ù ¼Ò½º¿¡ ÇÏ³ªÀÇ ¼­ºí¸´ ¸ÊÇÎ¸¸ °¡´ÉÇÏ¹Ç·Î ¿©·¯ °³ÀÇ ¼­ºí¸´¿¡ ´ëÇÑ Á¤º¸¸¦ ÀÏ¸ñ¿ä¿¬ÇÏ°Ô º¼ ¼ö ¾ø´Ù.
- * web.xml¿¡ ¼³Á¤ÇÏ´Â ¹æ¹ýº¸´Ù´Â À¯Áöº¸¼ö¼ºÀÌ ¶³¾îÁø´Ù.
+ * ê·¸ë¦¬ê³  @WebServlet (ì–´ë…¸í…Œì´ì…˜) ì„¤ì • ë°©ì‹ì€ ì„¤ì •íŒŒì¼ ì—†ì´ ìžë°” ì†ŒìŠ¤ì—ì„œ ì‰½ê²Œ url íŒ¨í„´ì„ ì§€ì •í•  ìˆ˜ ìžˆë‹¤.
+ * ê·¸ëŸ¬ë‚˜ í•˜ë‚˜ì˜ ìžë°” ì†ŒìŠ¤ì— í•˜ë‚˜ì˜ ì„œë¸”ë¦¿ ë§µí•‘ë§Œ ê°€ëŠ¥í•˜ë¯€ë¡œ ì—¬ëŸ¬ ê°œì˜ ì„œë¸”ë¦¿ì— ëŒ€í•œ ì •ë³´ë¥¼ ì¼ëª©ìš”ì—°í•˜ê²Œ ë³¼ ìˆ˜ ì—†ë‹¤.
+ * web.xmlì— ì„¤ì •í•˜ëŠ” ë°©ë²•ë³´ë‹¤ëŠ” ìœ ì§€ë³´ìˆ˜ì„±ì´ ë–¨ì–´ì§„ë‹¤.
  */
 
 @WebServlet("/first")
 public class A_FirstServlet extends HttpServlet {
 	
 	/*
-	 * init() ¸Þ¼­µå´Â ¼­ºí¸´ÀÌ ÃÖÃÊ·Î ½ÇÇàµÇ¾úÀ» ¶§
-	 * ¼­ºí¸´ ÄÁÅ×ÀÌ³Ê(¼­ºí¸´¿¡ ±ò¸° ½º·¹µå)°¡ ÀÚµ¿À¸·Î ½ÇÇàÇÑ´Ù.
-	 * ¼­ºí¸´ °´Ã¼°¡ »ý¼ºµÈ ÈÄ, ÇÑ¹ø¸¸ ½ÇÇàµÇ¹Ç·Î ½Ãºí¸´ ÃÊ±âÈ­ ÀÛ¾÷À» ´ã´çÇÑ´Ù.
+	 * init() ë©”ì„œë“œëŠ” ì„œë¸”ë¦¿ì´ ìµœì´ˆë¡œ ì‹¤í–‰ë˜ì—ˆì„ ë•Œ
+	 * ì„œë¸”ë¦¿ ì»¨í…Œì´ë„ˆ(ì„œë¸”ë¦¿ì— ê¹”ë¦° ìŠ¤ë ˆë“œ)ê°€ ìžë™ìœ¼ë¡œ ì‹¤í–‰í•œë‹¤.
+	 * ì„œë¸”ë¦¿ ê°ì²´ê°€ ìƒì„±ëœ í›„, í•œë²ˆë§Œ ì‹¤í–‰ë˜ë¯€ë¡œ ì‹œë¸”ë¦¿ ì´ˆê¸°í™” ìž‘ì—…ì„ ë‹´ë‹¹í•œë‹¤.
 	 */
 	
 	@Override
 	public void init() throws ServletException {
-		System.out.println("init() ½ÇÇàµÊ");
+		System.out.println("init() ì‹¤í–‰ë¨");
 	}
 	
 	/*
-	 * ¿äÃ» ½Ã¸¶´Ù ¹æ½Ä¿¡ »ó°ü¾øÀÌ ¹«Á¶°Ç ½ÇÇàµÈ´Ù.
+	 * ìš”ì²­ ì‹œë§ˆë‹¤ ë°©ì‹ì— ìƒê´€ì—†ì´ ë¬´ì¡°ê±´ ì‹¤í–‰ëœë‹¤.
 	 * 
 	 */
 	
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		System.out.println("service() ½ÇÇàµÊ");
+		System.out.println("service() ì‹¤í–‰ë¨");
 	}
 }

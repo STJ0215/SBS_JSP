@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 @WebServlet("/logProc")
 public class O_LoginOutServlet extends HttpServlet {
 	@Override
@@ -23,7 +22,7 @@ public class O_LoginOutServlet extends HttpServlet {
 		String pw = req.getParameter("pw");
 		
 		if (id.isEmpty() || pw.isEmpty()) {
-			out.print("ID ¶Ç´Â PW¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä!");
+			out.print("ID ë˜ëŠ” PWë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”!");
 			
 			return;
 		}
@@ -32,10 +31,10 @@ public class O_LoginOutServlet extends HttpServlet {
 		
 		if (session.isNew() || session.getAttribute("id") == null) {
 			session.setAttribute("id", id);
-			out.print("·Î±×ÀÎ ¿Ï·á!");
+			out.print("ë¡œê·¸ì¸ ì™„ë£Œ!");
 		}
 		else {
-			out.print("ÇöÀç ·Î±×ÀÎ »óÅÂÀÔ´Ï´Ù");
+			out.print("í˜„ì¬ ë¡œê·¸ì¸ ìƒíƒœì…ë‹ˆë‹¤");
 		}
 		
 		out.close();
@@ -52,13 +51,12 @@ public class O_LoginOutServlet extends HttpServlet {
 		if (session != null && session.getAttribute("id") != null) {
 			session.invalidate();
 			
-			out.print("·Î±×¾Æ¿ô ¿Ï·á!");
+			out.print("ë¡œê·¸ì•„ì›ƒ ì™„ë£Œ!");
 		}
 		else {
-			out.print("ÇöÀç ·Î±×ÀÎ »óÅÂ°¡ ¾Æ´Õ´Ï´Ù");
+			out.print("í˜„ì¬ ë¡œê·¸ì¸ ìƒíƒœê°€ ì•„ë‹™ë‹ˆë‹¤");
 		}
 		
 		out.close();
 	}
-	
 }

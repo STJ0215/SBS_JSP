@@ -1,4 +1,4 @@
- package com.sbs.edu;
+package com.sbs.edu;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 public class J_ServletConfigTestServlet extends HttpServlet {
 	/*
@@ -19,15 +18,15 @@ public class J_ServletConfigTestServlet extends HttpServlet {
 	*/
 	
 	/*
-	 * ServletConfig ÀÇ ¶Ç´Ù¸¥ »ç¿ë¹ı
-	 * ServletConfig ÀÇ ¶Ç´Ù¸¥ »ç¿ë¹ıÀº HttpServlet °´Ã¼¸¦ ÀÌ¿ëÇÏ´Â ¹æ¹ıÀÌ´Ù.
-	 * ¼­ºí¸´ ÆäÀÌÁö¸¦ ÀÛ¼ºÇÒ ¶§ ¹İµå½Ã »ó¼Ó¹Ş¾Æ¾ß ÇÏ´Â HttpSerlve °´Ã¼´Â
-	 * À¥»ó¿¡¼­ ÀÚ¹Ù ÇÁ·Î±×·¥ÀÌ ¿äÃ»µÇ¾î ½ÇÇàµÉ ¼ö ÀÖ´Â Á¶°ÇÀ» °¡Áö°í ÀÖ´Â °´Ã¼ÀÌ´Ù.
-	 * ±×·¡¼­ ¸ğµç ¼­ºí¸´ÀÇ »óÀ§ °³Ã¼´Â HttpServlet ÀÌ´Ù.
-	 * ±×¸®°í HttpServlet °´Ã¼´Â GenericServlet À» »ó¼Ó¹Ş´Â´Ù.
-	 * GenericServlet °´Ã¼ »ó¼ÓÇÏ°í ÀÖ´Â ÀÎÅÍÆäÀÌ½º¿¡ ServletConfig °¡ ÀÖ´Ù.
-	 * GenericServlet °´Ã¼´Â ServletConfig °´Ã¼°¡ °¡Áö°í ÀÖ´Â ¸Ş¼­µåµéÀ» ¸ğµÎ ÀçÁ¤ÀÇÇÏ°í ÀÖ´Ù.
-	 * µû¶ó¼­ ¼­ºí¸´ ÆäÀÌÁö¿¡¼­ init() ¸Ş¼­µå¸¦ ÀçÁ¤ÀÇÇÏÁö ¾Ê°í¼­µµ ServletConfig °´Ã¼ÀÇ ¸Ş¼­µå¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+	 * ServletConfig ì˜ ë˜ë‹¤ë¥¸ ì‚¬ìš©ë²•
+	 * ServletConfig ì˜ ë˜ë‹¤ë¥¸ ì‚¬ìš©ë²•ì€ HttpServlet ê°ì²´ë¥¼ ì´ìš©í•˜ëŠ” ë°©ë²•ì´ë‹¤.
+	 * ì„œë¸”ë¦¿ í˜ì´ì§€ë¥¼ ì‘ì„±í•  ë•Œ ë°˜ë“œì‹œ ìƒì†ë°›ì•„ì•¼ í•˜ëŠ” HttpSerlve ê°ì²´ëŠ”
+	 * ì›¹ìƒì—ì„œ ìë°” í”„ë¡œê·¸ë¨ì´ ìš”ì²­ë˜ì–´ ì‹¤í–‰ë  ìˆ˜ ìˆëŠ” ì¡°ê±´ì„ ê°€ì§€ê³  ìˆëŠ” ê°ì²´ì´ë‹¤.
+	 * ê·¸ë˜ì„œ ëª¨ë“  ì„œë¸”ë¦¿ì˜ ìƒìœ„ ê°œì²´ëŠ” HttpServlet ì´ë‹¤.
+	 * ê·¸ë¦¬ê³  HttpServlet ê°ì²´ëŠ” GenericServlet ì„ ìƒì†ë°›ëŠ”ë‹¤.
+	 * GenericServlet ê°ì²´ ìƒì†í•˜ê³  ìˆëŠ” ì¸í„°í˜ì´ìŠ¤ì— ServletConfig ê°€ ìˆë‹¤.
+	 * GenericServlet ê°ì²´ëŠ” ServletConfig ê°ì²´ê°€ ê°€ì§€ê³  ìˆëŠ” ë©”ì„œë“œë“¤ì„ ëª¨ë‘ ì¬ì •ì˜í•˜ê³  ìˆë‹¤.
+	 * ë”°ë¼ì„œ ì„œë¸”ë¦¿ í˜ì´ì§€ì—ì„œ init() ë©”ì„œë“œë¥¼ ì¬ì •ì˜í•˜ì§€ ì•Šê³ ì„œë„ ServletConfig ê°ì²´ì˜ ë©”ì„œë“œë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
 	 */
 	
 	@Override

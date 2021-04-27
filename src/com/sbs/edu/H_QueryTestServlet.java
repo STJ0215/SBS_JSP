@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/queryTest")
 public class H_QueryTestServlet extends HttpServlet {
 	@Override
@@ -24,7 +23,7 @@ public class H_QueryTestServlet extends HttpServlet {
 		
 		out.print("<html>");
 		out.print("<head>");
-		out.print("<title>Request Á¤º¸ Ãâ·Â</title>");
+		out.print("<title>Request ì •ë³´ ì¶œë ¥</title>");
 		out.print("</head>");
 		
 		out.print("<body>");
@@ -48,7 +47,7 @@ public class H_QueryTestServlet extends HttpServlet {
 		
 		out.print("<html>");
 		out.print("<head>");
-		out.print("<title>Request Á¤º¸ Ãâ·Â</title>");
+		out.print("<title>Request ì •ë³´ ì¶œë ¥</title>");
 		out.print("</head>");
 		
 		out.print("<body>");

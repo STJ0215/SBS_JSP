@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/cookie1")
 public class N_1_Cookie extends HttpServlet {
 	@Override
@@ -25,15 +24,15 @@ public class N_1_Cookie extends HttpServlet {
 		
 		Cookie c2 = new Cookie("code", "0001");
 		c2.setPath("/");
-		c2.setMaxAge(60 * 60 * 3); // 3½Ã°£
+		c2.setMaxAge(60 * 60 * 3); // 3ì¼
 		resp.addCookie(c2);
 		
 		Cookie c3 = new Cookie("subject", "java");
 		c3.setPath("/");
-		c3.setMaxAge(60 * 60 * 24 * 10); // 10ÀÏ
+		c3.setMaxAge(60 * 60 * 24 * 10); // 10ì¼
 		resp.addCookie(c3);
 		
-		out.print("ÄíÅ° Àü¼Û ¿Ï·á");
+		out.print("ì¿ í‚¤ ì „ì†¡ ì™„ë£Œ!");
 		out.close();
 	}
 }

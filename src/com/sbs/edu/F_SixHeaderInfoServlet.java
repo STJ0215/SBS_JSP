@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /*
- * Http ÇÁ·ÎÅäÄİÀÇ ¿äÃ»Á¤º¸´Â Çì´õ¿Í ¸öÃ¼(body)·Î ±¸¼ºµÇ¾î ÀÖ°í.
- * Çì´õ´Â µÎ¹øÂ° ÁÙ ÀÌÈÄºÎÅÍ´Â "NAME" : "VALUE" ÇüÅÂ·Î Çì´õ Á¤º¸°¡ µé¾îÀÖ´Ù.
+ * Http í”„ë¡œí† ì½œì˜ ìš”ì²­ì •ë³´ëŠ” í—¤ë”ì™€ ëª¸ì²´(body)ë¡œ êµ¬ì„±ë˜ì–´ ìˆê³ .
+ * í—¤ë”ëŠ” ë‘ë²ˆì§¸ ì¤„ ì´í›„ë¶€í„°ëŠ” "NAME" : "VALUE" í˜•íƒœë¡œ í—¤ë” ì •ë³´ê°€ ë“¤ì–´ìˆë‹¤.
  */
 
 @WebServlet("/headerInfo")
@@ -25,13 +25,13 @@ public class F_SixHeaderInfoServlet extends HttpServlet {
 		
 		out.print("<html>");
 		out.print("<head>");
-		out.print("<title>Request URL Á¤º¸ Ãâ·Â</title>");
+		out.print("<title>Request URL ì •ë³´ ì¶œë ¥</title>");
 		out.print("</head>");
 		
 		out.print("<body>");
-		out.print("<h3>¿äÃ» Çì´õ Á¤º¸</h3>");
+		out.print("<h3>ìš”ì²­ í—¤ë” ì •ë³´</h3>");
 		
-		// Çì´õ ¾È¿¡ ÀÖ´Â Á¤º¸Áß Çì´õ ÀÌ¸§µé¸¸ °¡Á®¿Â´Ù.
+		// í—¤ë” ì•ˆì— ìˆëŠ” ì •ë³´ì¤‘ í—¤ë” ì´ë¦„ë“¤ë§Œ ê°€ì ¸ì˜¨ë‹¤.
 		Enumeration<String> em = req.getHeaderNames();
 		
 		while (em.hasMoreElements()) {

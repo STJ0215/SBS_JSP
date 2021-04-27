@@ -1,0 +1,33 @@
+package com.sbs.edu;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/bookProc")
+public class R_1_BookTestServlet extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html; charset=UTF-8");
+		req.setCharacterEncoding("UTF-8"); 
+		
+		String title = req.getParameter("title");
+		String author = req.getParameter("author");
+		String publisher = req.getParameter("publisher");
+		
+		R_3_BookVO book = new R_3_BookVO();
+		book.setTitle(title);
+		book.setAuthor(author);
+		book.setPublisher(publisher);
+		
+		req.setAttribute("book", book);		
+		RequestDispatcher rd = req.getRequestDispatcher("bookOutput");
+		rd.forward(req, resp); 
+	}
+}

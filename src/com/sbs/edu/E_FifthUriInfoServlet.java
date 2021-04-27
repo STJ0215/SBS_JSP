@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/uriInfo")
 public class E_FifthUriInfoServlet extends HttpServlet {
 	@Override
@@ -20,26 +19,26 @@ public class E_FifthUriInfoServlet extends HttpServlet {
 		
 		out.print("<html>");
 		out.print("<head>");
-		out.print("<title>Request URL Á¤º¸ Ãâ·Â</title>");
+		out.print("<title>Request URL ì •ë³´ ì¶œë ¥</title>");
 		out.print("</head>");
 		
 		out.print("<body>");
-		out.print("<h3>¿äÃ» ¹æ½Ä°ú ÇÁ·ÎÅäÄİ Á¤º¸</h3>");
+		out.print("<h3>ìš”ì²­ ë°©ì‹ê³¼ í”„ë¡œí† ì½œ ì •ë³´</h3>");
 		out.print("<br>");
 		
-		// Å¬¶óÀÌ¾ğÆ®°¡ ¼­ºñ½º¸¦ ¿äÃ»ÇÑ ¹®¼±ÀÇ ÀüÃ¼Á¤º¸, Áï url¸¦ ¹İÈ¯ÇÑ´Ù.
+		// í´ë¼ì´ì–¸íŠ¸ê°€ ì„œë¹„ìŠ¤ë¥¼ ìš”ì²­í•œ ë¬¸ì„ ì˜ ì „ì²´ì •ë³´, ì¦‰ urlë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Request URL : " + req.getRequestURL());
 		out.print("<br>");
-		// Å¬¶óÀÌ¾ğÆ®°¡ ¿äÃ»ÇÑ ¹®¼­¸¦ ¹İÈ¯ÇÑ´Ù.
+		// í´ë¼ì´ì–¸íŠ¸ê°€ ìš”ì²­í•œ ë¬¸ì„œë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Request URI : " + req.getRequestURI());
 		out.print("<br>");
-		// À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀÇ °æ·Î Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+		// ì›¹ ì• í”Œë¦¬ì¼€ì´ì…˜ì˜ ê²½ë¡œ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Context Path : " + req.getContextPath());
 		out.print("<br>");
-		// ¼­ºñ½º¸¦ Ã³¸®ÇÏ¸é¼­ »ç¿ëµÇ´Â ÇÁ·ÎÅäÄİÀÇ ±¸Ã¼ÀûÀÎ Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+		// ì„œë¹„ìŠ¤ë¥¼ ì²˜ë¦¬í•˜ë©´ì„œ ì‚¬ìš©ë˜ëŠ” í”„ë¡œí† ì½œì˜ êµ¬ì²´ì ì¸ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Request Protocol : " + req.getServletPath());
 		out.print("<br>");
-		// À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀ» ·çÆ® µğ·ºÅä¸®¸¦ ±âÁØÀ¸·Î ¼­ºí¸´ÀÇ °æ·Î¸¦ ¹İÈ¯
+		// ì›¹ ì• í”Œë¦¬ì¼€ì´ì…˜ì„ ë£¨íŠ¸ ë””ë ‰í† ë¦¬ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì„œë¸”ë¦¿ì˜ ê²½ë¡œë¥¼ ë°˜í™˜
 		out.print("Servlet Path : " + req.getServletPath());
 		
 		out.print("</body>");

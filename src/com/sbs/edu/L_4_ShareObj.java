@@ -1,6 +1,5 @@
 package com.sbs.edu;
 
-
 public class L_4_ShareObj {
 	private int count;
 	private String str;

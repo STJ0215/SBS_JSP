@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/netInfo")
 public class D_FourthNetInfoServlet extends HttpServlet {
 	@Override
@@ -20,33 +19,33 @@ public class D_FourthNetInfoServlet extends HttpServlet {
 		
 		out.print("<html>");
 		out.print("<head>");
-		out.print("<title>RequestÁ¤º¸ Ãâ·Â Servlet</title>");
+		out.print("<title>Requestì •ë³´ ì¶œë ¥ Servlet</title>");
 		out.print("</head>");
 		
 		out.print("<body>");
-		out.print("<h3>³×Æ®¿öÅ© °ü·Ã ¿äÃ» Á¤º¸</h3>");
+		out.print("<h3>ë„¤íŠ¸ì›Œí¬ ê´€ë ¨ ìš”ì²­ ì •ë³´</h3>");
 		out.print("<br>");
 		
-		//Å¬¶óÀÌ¾ğÆ®°¡ À¥¼­¹ö¿¡ ¼­ºñ½º¸¦ ¿äÃ»ÇÒ ¶§ »ç¿ëÇÑ ÇÁ·ÎÅäÄİ ÀÌ¸§À» º¯È¯ÇÑ´Ù.
+		//í´ë¼ì´ì–¸íŠ¸ê°€ ì›¹ì„œë²„ì— ì„œë¹„ìŠ¤ë¥¼ ìš”ì²­í•  ë•Œ ì‚¬ìš©í•œ í”„ë¡œí† ì½œ ì´ë¦„ì„ ë³€í™˜í•œë‹¤.
 		out.print("Request Scheme : " + req.getScheme());
 		out.print("<br>");
-		// ¼­¹öÀÇ È£½ºÆ® ÀÌ¸§À» ¹İÈ¯ÇÏ°í, º°µµÀÇ ÀÌ¸§ÀÌ ¾øÀ¸¸é IPÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+		// ì„œë²„ì˜ í˜¸ìŠ¤íŠ¸ ì´ë¦„ì„ ë°˜í™˜í•˜ê³ , ë³„ë„ì˜ ì´ë¦„ì´ ì—†ìœ¼ë©´ IPì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Server name : " + req.getServerName());
 		out.print("<br>");
-		// Å¬¶óÀÌ¾ğÆ®·ÎºÎÅÍ ¼­ºñ½º¸¦ ¿äÃ»¹ŞÀº IPÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+		// í´ë¼ì´ì–¸íŠ¸ë¡œë¶€í„° ì„œë¹„ìŠ¤ë¥¼ ìš”ì²­ë°›ì€ IPì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Server Address: " + req.getLocalAddr());
 		out.print("<br>");
-		// Å¬¶óÀÌ¾ğÆ®·ÎºÎÅÍ ¼­ºñ½º¸¦ ¿äÃ»¹ŞÀº PortÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+		// í´ë¼ì´ì–¸íŠ¸ë¡œë¶€í„° ì„œë¹„ìŠ¤ë¥¼ ìš”ì²­ë°›ì€ Portì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Server Port : " + req.getServerPort());
 		out.print("<br>");
 		
-		// ¼­ºñ½º¸¦ ¿äÃ»ÇÑ Å¬¶óÀÌ¾ğÆ®ÀÇ È£½ºÆ® ÀÌ¸§À» ¹İÈ¯ÇÑ´Ù.
+		// ì„œë¹„ìŠ¤ë¥¼ ìš”ì²­í•œ í´ë¼ì´ì–¸íŠ¸ì˜ í˜¸ìŠ¤íŠ¸ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
 		out.print("Client Host : " + req.getRemoteHost());
 		out.print("<br>");
-		// ¼­ºñ½º¸¦ ¿äÃ»ÇÑ Å¬¶óÀÌ¾ğÆ®ÀÇ IPÁÖ¼Ò¸¦ ¹İÈ¯ÇÑ´Ù.
+		// ì„œë¹„ìŠ¤ë¥¼ ìš”ì²­í•œ í´ë¼ì´ì–¸íŠ¸ì˜ IPì£¼ì†Œë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Client Address : " + req.getRemoteAddr());
 		out.print("<br>");
-		// ¼­ºñ½º¸¦ ¿äÃ»ÇÑ Å¬¶óÀÌ¾ğÆ®ÀÇ Port¹øÈ£¸¦ ¹İÈ¯ÇÑ´Ù.
+		// ì„œë¹„ìŠ¤ë¥¼ ìš”ì²­í•œ í´ë¼ì´ì–¸íŠ¸ì˜ Portë²ˆí˜¸ë¥¼ ë°˜í™˜í•œë‹¤.
 		out.print("Client Port : " + req.getRemotePort());
 		
 		out.print("</body>");

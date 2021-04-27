@@ -27,13 +27,15 @@ public class N_3_Cookie extends HttpServlet {
 			}
 		}
 		cnt++;
+		
 		Cookie c = new Cookie("count", cnt + "");
 		c.setMaxAge(60 * 60 * 1);
 		resp.addCookie(c);
 		
 		PrintWriter out = resp.getWriter();
 		
-		out.print("<h1>�湮Ƚ�� : " + cnt + "</h1>");
+		out.print("<h1>방문횟수 : " + cnt + "</h1>");
+		
 		out.close();
 	}
 }

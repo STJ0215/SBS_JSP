@@ -1,18 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset="UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 	<head>
-    	<title>È¸¿ø°¡ÀÔ È­¸é</title>
+    	<title>íšŒì›ê°€ìž… í™”ë©´</title>
     	
     	<link href="join.css" rel="stylesheet" type="text/css">
 	</head>
-	
 	<body>
     	<div class="wrap">
         	<br>
         	<br>
         	<br>
-        	<h1>È¸¿ø °¡ÀÔ</h1>
+        	<h1>íšŒì› ê°€ìž…</h1>
         	<br>
         	<br>
         	<br>
@@ -20,38 +19,38 @@
         	<form>
             	<table>
                 	<tr>
-                    	<td class="title">¾ÆÀÌµð</td>
+                    	<td class="title">ì•„ì´ë””</td>
                     	<td class="essential">*</td>
                     	<td>
                     		<input type="text" name="id" maxlength="15" size="20">
-                    		<input type="button" value="Áßº¹ È®ÀÎ">
+                    		<input type="button" value="ì¤‘ë³µ í™•ì¸">
                     		<br>
-                    		<span>»ç¿ëÇÒ ¾ÆÀÌµð¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.</span>
+                    		<span>ì‚¬ìš©í•  ì•„ì´ë””ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”.</span>
                     	</td>
                 	</tr>
                 	
                 	<tr>
-                    	<td class="title">ºñ¹Ð¹øÈ£</td>
+                    	<td class="title">ë¹„ë°€ë²ˆí˜¸</td>
                     	<td class="essential">*</td>
                     	<td>
                         	<input type="password" name="password" maxlength="15" size="20">
                         	<br>
-                        	<span>»ç¿ëÇÒ ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.</span>
+                        	<span>ì‚¬ìš©í•  ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš”.</span>
                     	</td>
                 	</tr>
                 	
                 	<tr>
-                    	<td class="title">ºñ¹Ð¹øÈ£ È®ÀÎ</td>
+                    	<td class="title">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</td>
                     	<td class="essential">*</td>
                     	<td>
                         	<input type="password" name="password" maxlength="10" size="20">
                         	<br>
-                        	<span>ºñ¹Ð¹øÈ£¸¦ ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.</span>
+                        	<span>ë¹„ë°€ë²ˆí˜¸ë¥¼ ë‹¤ì‹œ ìž…ë ¥í•´ ì£¼ì„¸ìš”.</span>
                     	</td>
                 	</tr>
                     
                 	<tr>
-                    	<td class="title">ÀÌ¸§</td>
+                    	<td class="title">ì´ë¦„</td>
                     	<td class="essential">*</td>
                     	<td>
                         	<input type="text" name="name" maxlength="10" size="10">
@@ -59,28 +58,28 @@
                 	</tr>
                     
                 	<tr>
-                    	<td class="title">¼ºº°</td>
+                    	<td class="title">ì„±ë³„</td>
                     	<td class="essential">*</td>
                     	<td>
-                        	<input type="radio" name="gender" value="³²" checked>³²
-                        	<input type="radio" name="gender" value="¿©" checked>¿©
+                        	<input type="radio" name="gender" value="ë‚¨" checked>ë‚¨
+                        	<input type="radio" name="gender" value="ì—¬" checked>ì—¬
                     	</td>
                 	</tr>
                     
                 	<tr>
-                    	<td class="title">»ý³â¿ùÀÏ</td>
+                    	<td class="title">ìƒë…„ì›”ì¼</td>
                     	<td class="essential">*</td>
                     	<td>
-                        	<input type="text" name="birth_yy" maxlength="4" size="4" placeholder="³â">
+                        	<input type="text" name="birth_yy" maxlength="4" size="4" placeholder="ë…„">
                         	/
-                        	<input type="text" name="birth_mm" maxlength="2" size="4" placeholder="¿ù">
+                        	<input type="text" name="birth_mm" maxlength="2" size="4" placeholder="ì›”">
                         	/
-                        	<input type="text" name="birth_dd" maxlength="2" size="4" placeholder="ÀÏ">
+                        	<input type="text" name="birth_dd" maxlength="2" size="4" placeholder="ì¼">
                     	</td>
                 	</tr>
                     
                 	<tr>
-                    	<td class="title">ÀÌ¸ÞÀÏ</td>
+                    	<td class="title">ì´ë©”ì¼</td>
                     	<td class="essential">*</td>
                     	<td>
                         	<input type="text" name="email_1" maxlength="15" size="20">
@@ -93,7 +92,7 @@
                 	</tr>
                     
                 	<tr>
-                    	<td class="title">¿¬¶ôÃ³</td>
+                    	<td class="title">ì—°ë½ì²˜</td>
                     	<td class="essential"></td>
                     	<td>
                     		<select name="phone_1">
@@ -108,18 +107,18 @@
                 	</tr>
                 	
                 	<tr>
-                		<td class="title">¿ìÆí¹øÈ£</td>
+                		<td class="title">ìš°íŽ¸ë²ˆí˜¸</td>
                 		<td class="essential">*</td>
                 		<td>
                 			<input type="text" name="address_num1" maxlength="4" size="4">
                 			-
                 			<input type="text" name="address_num2" maxlength="4" size="4">
-                    		<input type="button" value="°Ë»ö">
+                    		<input type="button" value="ê²€ìƒ‰">
                 		</td>
                 	</tr>
                 	
                 	<tr>
-                    	<td class="title">ÁÖ¼Ò</td>
+                    	<td class="title">ì£¼ì†Œ</td>
                     	<td class="essential">*</td>
                     	<td>
                         	<input type="text" maxlength="100" size="50" name="address">
@@ -127,21 +126,21 @@
                 	</tr>
                 	
                 	<tr>
-                		<td class="title">Ãë¹Ì</td>
+                		<td class="title">ì·¨ë¯¸</td>
                 		<td></td>
                 		<td>
-                        	<input type="radio" name="gender" value="µ¶¼­" checked>µ¶¼­
-                        	<input type="radio" name="gender" value="¿îµ¿" checked>¿îµ¿
-                        	<input type="radio" name="gender" value="°ÔÀÓ" checked>°ÔÀÓ
-                        	<input type="radio" name="gender" value="TV½ÃÃ»" checked>TV½ÃÃ»
+                        	<input type="radio" name="gender" value="ë…ì„œ" checked>ë…ì„œ
+                        	<input type="radio" name="gender" value="ìš´ë™" checked>ìš´ë™
+                        	<input type="radio" name="gender" value="ê²Œìž„" checked>ê²Œìž„
+                        	<input type="radio" name="gender" value="TVì‹œì²­" checked>TVì‹œì²­
                     	</td>                		
                 	</tr>
             	</table>
             	
             	<br>
             	
-            	<input type="submit" value="¿Ï·á">
-            	<input type="button" value="Ãë¼Ò">
+            	<input type="submit" value="ì™„ë£Œ">
+            	<input type="button" value="ì·¨ì†Œ">
         	</form>
     	</div>
 	</body>

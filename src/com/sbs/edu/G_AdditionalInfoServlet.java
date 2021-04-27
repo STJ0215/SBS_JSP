@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/addInfo")
 public class G_AdditionalInfoServlet extends HttpServlet {
 	@Override
@@ -21,11 +20,11 @@ public class G_AdditionalInfoServlet extends HttpServlet {
 		
 		out.print("<html>");
 		out.print("<head>");
-		out.print("<title>Request Á¤º¸ Ãâ·Â</title>");
+		out.print("<title>Request ì •ë³´ ì¶œë ¥</title>");
 		out.print("</head>");
 		
 		out.print("<body>");
-		out.print("<h3>Ãß°¡ÀûÀÎ È®ÀÎ ¿äÃ»Á¤º¸</h3>");
+		out.print("<h3>ì¶”ê°€ì ì¸ ìš”ì²­ ì •ë³´</h3>");
 		out.print("<br>");
 		
 		out.print("Reuqest Method : " + req.getMethod());

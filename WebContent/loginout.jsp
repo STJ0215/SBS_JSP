@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="EUC-KR">
+		<meta charset="UTF-8">
 		<title>회원인증</title>
 	</head>
-	
 	<body>
 		<form action="logProc" method="POST">
 			ID : <input type="text" name="id"> <br>

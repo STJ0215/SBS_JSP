@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /*
- * web.xml : ¼­¹ö°¡ ½ÃÀÛÇÒ ¶§ À¥¼­¹ö°¡ »ç¿ëÇÏ´Â ÆÄÀÏ
- * ¼­¹ö¿¡¼­ ¼­ºí¸´ ½ÇÇà¿¡ °üÇÑ Á¤º¸¸¦ ¼³Á¤ÇÒ ¶§ web.xml¿¡ <serlvet> ÅÂ±×·Î ¼³Á¤ÇÑ´Ù.
- * ¼­ºí¸´ ¶Ç´Â À¥¾ÖÇÃ¸®ÄÉÀÌ¼Ç ¼­ºñ½º¸¦ ½ÇÇàÇÏ±â À§ÇØ Á¸ÀçÇÏ´Â ÆÄÀÏÀÌ´Ù.
+ * web.xml : ì„œë²„ê°€ ì‹œìž‘í•  ë•Œ ì›¹ì„œë²„ê°€ ì‚¬ìš©í•˜ëŠ” íŒŒì¼
+ * ì„œë²„ì—ì„œ ì„œë¸”ë¦¿ ì‹¤í–‰ì— ê´€í•œ ì •ë³´ë¥¼ ì„¤ì •í•  ë•Œ web.xmlì— <serlvet> íƒœê·¸ë¡œ ì„¤ì •í•œë‹¤.
+ * ì„œë¸”ë¦¿ ë˜ëŠ” ì›¹ì• í”Œë¦¬ì¼€ì´ì…˜ ì„œë¹„ìŠ¤ë¥¼ ì‹¤í–‰í•˜ê¸° ìœ„í•´ ì¡´ìž¬í•˜ëŠ” íŒŒì¼ì´ë‹¤.
  */
 
 /*
  * [1] <servlet>
- * <servlet> ÅÂ±×´Â ¼³Á¤ÇÏ·Á´Â ¼­ºí¸´À» µî·ÏÇÑ´Ù.
- * <servlet> ÅÂ±×¸¦ »ç¿ëÇÏ¸é ¹Ýµå½Ã ÇÏÀ§ ÅÂ±×·Î <servlet-name> °ú <servlet-class> °¡ ³ª¿Â´Ù.
+ * <servlet> íƒœê·¸ëŠ” ì„¤ì •í•˜ë ¤ëŠ” ì„œë¸”ë¦¿ì„ ë“±ë¡í•œë‹¤.
+ * <servlet> íƒœê·¸ë¥¼ ì‚¬ìš©í•˜ë©´ ë°˜ë“œì‹œ í•˜ìœ„ íƒœê·¸ë¡œ <servlet-name> ê³¼ <servlet-class> ê°€ ë‚˜ì˜¨ë‹¤.
  * 
  * [2] <init-param>
- * <init-param> ÅÂ±×´Â ¼­ºí¸´¿¡ º¯¼ö¸¦ Àü´ÞÇÒ ¶§ »ç¿ëÇÑ´Ù.
- * ¼­ºí¸´À» ½ÇÇàÇÏ¸é¼­ ÇÊ¿äÇÑ°ªÀ» ¿ÜºÎ¿¡¼­ Àü´Þ¹Þ¾Æ ½ÇÇàÇÒ ¼ö ÀÖ´Ù.
- * ¼­ºí¸´ ¼Ò½º¿¡¼­ Á÷Á¢ °ªÀ» ÁöÁ¤ÇØ¼­ »ç¿ëÇØµµ µÇÁö¸¸,
- * ½ÇÇàÈ¯°æ¿¡ ¸Â°Ô µ¿ÀûÀ¸·Î °ªÀ» ÇÒ´çÇÏ°íÀÚ ÇÒ ¶§ »ç¿ëÇÑ´Ù.
+ * <init-param> íƒœê·¸ëŠ” ì„œë¸”ë¦¿ì— ë³€ìˆ˜ë¥¼ ì „ë‹¬í•  ë•Œ ì‚¬ìš©í•œë‹¤.
+ * ì„œë¸”ë¦¿ì„ ì‹¤í–‰í•˜ë©´ì„œ í•„ìš”í•œê°’ì„ ì™¸ë¶€ì—ì„œ ì „ë‹¬ë°›ì•„ ì‹¤í–‰í•  ìˆ˜ ìžˆë‹¤.
+ * ì„œë¸”ë¦¿ ì†ŒìŠ¤ì—ì„œ ì§ì ‘ ê°’ì„ ì§€ì •í•´ì„œ ì‚¬ìš©í•´ë„ ë˜ì§€ë§Œ,
+ * ì‹¤í–‰í™˜ê²½ì— ë§žê²Œ ë™ì ìœ¼ë¡œ ê°’ì„ í• ë‹¹í•˜ê³ ìž í•  ë•Œ ì‚¬ìš©í•œë‹¤.
  */
 
 public class I_InitParamServlet extends HttpServlet {

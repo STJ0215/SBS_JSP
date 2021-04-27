@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/setcontext")
 public class L_3_SetServletContextServlet extends HttpServlet {
 	@Override
@@ -23,17 +22,17 @@ public class L_3_SetServletContextServlet extends HttpServlet {
 		L_4_ShareObj obj1 = new L_4_ShareObj();
 		
 		obj1.setCount(100);
-		obj1.setStr("°´Ã¼°øÀ¯ Å×½ºÆ® - 1");
+		obj1.setStr("ê°ì²´ê³µìœ  í…ŒìŠ¤íŠ¸ - 1");
 		sc.setAttribute("data1", obj1);
 		
 		L_4_ShareObj obj2 = new L_4_ShareObj();
 		
 		obj2.setCount(200);
-		obj2.setStr("°´Ã¼°øÀ¯ Å×½ºÆ® - 2");
+		obj2.setStr("ê°ì²´ê³µìœ  í…ŒìŠ¤íŠ¸ - 2");
 		sc.setAttribute("data2", obj2);
-		out.print("ServletContext °´Ã¼¿¡ µ¥ÀÌÅÍ µî·ÏÀ» ÇÏ¿´½À´Ï´Ù");
-		out.close();
 		
+		out.print("ServletContext ê°ì²´ì— ë°ì´í„° ë“±ë¡ì„ í•˜ì˜€ìŠµë‹ˆë‹¤");
+		
+		out.close();
 	}
-	
 }

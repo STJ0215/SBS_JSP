@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 @WebServlet("/session")
 public class M_Session extends HttpServlet {
 	@Override
@@ -26,18 +25,30 @@ public class M_Session extends HttpServlet {
 			session = req.getSession();
 			
 			if (session.isNew()) {
-				msg = "»õ·Î¿î ¼¼¼Ç °´Ã¼°¡ »ı¼ºµÊ";
+				msg = "ìƒˆë¡œìš´ ì„¸ì…˜ ê°ì²´ê°€ ìƒì„±ë¨";
 			}
 			else {
-				msg = "±âÁ¸ÀÇ ¼¼¼Ç °´Ã¼°¡ ¸®ÅÏµÊ";
+				msg = "ê¸°ì¡´ì˜ ì„¸ì…˜ ê°ì²´ê°€ ë¦¬í„´ë¨";
+			}
+		}
+		else if (param.equals("delete")) {
+			session = req.getSession();
+			
+			if (session != null) {
+				session.invalidate();
+				
+				msg = "ì„¸ì…˜ ê°ì²´ ì‚­ì œ ì‘ì—… ì™„ë£Œ";
+			}
+			else {
+				msg = "ì‚­ì œí•  ì„¸ì…˜ ì¡´ì¬í•˜ì§€ ì•ŠìŒ";
 			}
 		}
 		else if (param.equals("add")) {
 			session = req.getSession(false);
-			// ¼¼¼Ç¿¡ °ª ÀúÀå
-			session.setAttribute("msg", "¸Ş¼¼Áö ÀÔ´Ï´Ù!");
+			// ì„¸ì…˜ì— ê°’ ì €ì¥
+			session.setAttribute("msg", "ë©”ì„¸ì§€ ì…ë‹ˆë‹¤!");
 			
-			msg = "¼¼¼Ç °´Ã¼¿¡ µ¥ÀÌÅÍ µî·Ï ¿Ï·á";
+			msg = "ì„¸ì…˜ ê°ì²´ì— ë°ì´í„° ë“±ë¡ ì™„ë£Œ";
 		}
 		else if (param.equals("get")) {
 			session = req.getSession(false);
@@ -47,14 +58,14 @@ public class M_Session extends HttpServlet {
 				msg = str;
 			}
 			else {
-				msg = "µ¥ÀÌÅÍ¸¦ ÃßÃâÇÒ ¼¼¼Ç °´Ã¼°¡ ¾ø½À´Ï´Ù";
+				msg = "ë°ì´í„°ë¥¼ ì¶”ì¶œí•  ì„¸ì…˜ ê°ì²´ê°€ ì—†ìŠµë‹ˆë‹¤";
 			}
 		}
 		else if (param.equals("replace")) {
 			session = req.getSession();
-			session.setAttribute("msg", "»õ·Î¿î ¸Ş¼¼Áö ÀÔ´Ï´Ù");
+			session.setAttribute("msg", "ìƒˆë¡œìš´ ë©”ì„¸ì§€ ì…ë‹ˆë‹¤");
 			
-			msg = "¼¼¼Ç °´Ã¼¿¡ µ¥ÀÌÅÍ µî·Ï ¿Ï·á";
+			msg = "ì„¸ì…˜ ê°ì²´ì— ë°ì´í„° ë“±ë¡ ì™„ë£Œ";
 		}
 		else if (param.equals("remove")) {
 			session = req.getSession(false);
@@ -62,26 +73,14 @@ public class M_Session extends HttpServlet {
 			if (session != null) {
 				session.removeAttribute("msg");
 				
-				msg = "¼¼¼Ç °´Ã¼ÀÇ µ¥ÀÌÅÍ »èÁ¦ ¿Ï·á";
+				msg = "ì„¸ì…˜ ê°ì²´ì˜ ë°ì´í„° ì‚­ì œ ì™„ë£Œ";
 			}
 			else {
-				msg = "µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÒ ¼¼¼Ç °´Ã¼ Á¸ÀçÇÏÁö ¾ÊÀ½";
-			}
-		}
-		else if (param.equals("delete")) {
-			session = req.getSession();
-			
-			if (session != null) {
-				session.invalidate();
-				
-				msg = "¼¼¼Ç °´Ã¼ »èÁ¦ ÀÛ¾÷ ¿Ï·á";
-			}
-			else {
-				msg = "»èÁ¦ÇÒ ¼¼¼Ç Á¸ÀçÇÏÁö ¾ÊÀ½";
+				msg = "ë°ì´í„°ë¥¼ ì‚­ì œí•  ì„¸ì…˜ ê°ì²´ ì¡´ì¬í•˜ì§€ ì•ŠìŒ";
 			}
 		}
 		
-		out.print("Ã³¸® °á°ú : " + msg);
+		out.print("ì²˜ë¦¬ ê²°ê³¼ : " + msg);
 		
 		out.close();
 	}

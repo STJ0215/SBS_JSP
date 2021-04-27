@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/cookie2")
 public class N_2_Cookie extends HttpServlet {
 	@Override
@@ -25,7 +24,7 @@ public class N_2_Cookie extends HttpServlet {
 			out.print(list[i].getName() + " : " + list[i].getValue() + "<br>");
 		}
 		
-		out.print("ÄíÅ° Àü¼Û ¿Ï·á");
+		out.print("ì¿ í‚¤ ì „ì†¡ ì™„ë£Œ!");
 		out.close();
 	}
 }

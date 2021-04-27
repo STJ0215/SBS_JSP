@@ -6,7 +6,6 @@
 		<meta charset="UTF-8">
 		<title>Form Test</title>
 	</head>
-	
 	<body>
 		<h3>회원정보 GET</h3>
 		
@@ -18,7 +17,6 @@
 			<input type="submit" value="전송">
 			<input type="reset" value="초기화">
 		</form>
-		
 		
 		<h3>회원정보 POST</h3>
 		

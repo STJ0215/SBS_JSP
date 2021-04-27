@@ -9,20 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/second")
 public class B_SecondServlet extends HttpServlet {
 	
 	/*
-	 * HttpServletRequest´Â Å¬¶óÀÌ¾ğÆ®°¡ ¼­¹ö¿¡ º¸³»´Â ¿äÃ»Á¤º¸¸¦ Ã³¸®ÇÏ´Â °´Ã¼
-	 * HttpServletResponse´Â ¼­¹ö°¡ Å¬¶óÀÌ¾ğÆ®·Î º¸³»´Â ÀÀ´äÁ¤º¸¸¦ Ã³¸®ÇÏ´Â °´Ã¼
+	 * HttpServletRequestëŠ” í´ë¼ì´ì–¸íŠ¸ê°€ ì„œë²„ì— ë³´ë‚´ëŠ” ìš”ì²­ì •ë³´ë¥¼ ì²˜ë¦¬í•˜ëŠ” ê°ì²´
+	 * HttpServletResponseëŠ” ì„œë²„ê°€ í´ë¼ì´ì–¸íŠ¸ë¡œ ë³´ë‚´ëŠ” ì‘ë‹µì •ë³´ë¥¼ ì²˜ë¦¬í•˜ëŠ” ê°ì²´
 	 */
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doGet() ½ÇÇàµÊ");
+		System.out.println("doGet() ì‹¤í–‰ë¨");
 		
-		// ¿äÃ»ÇÑ Å¬¶óÀÌ¾ğÆ®¿Í À¥¼­¹ö°£ ¿¬°áµÈ Ãâ·Â ½ºÆ®¸²
+		// ìš”ì²­í•œ í´ë¼ì´ì–¸íŠ¸ì™€ ì›¹ì„œë²„ê°„ ì—°ê²°ëœ ì¶œë ¥ ìŠ¤íŠ¸ë¦¼
 		PrintWriter out = response.getWriter();
 		
 		out.print("<html>");
@@ -35,11 +34,11 @@ public class B_SecondServlet extends HttpServlet {
 		out.print("</body>");
 		out.print("</html>");
 		
-		out.close(); // ÀÚ¿øÇØÁ¦: »ı¼ºÇß´ø ÀÚ¿øÀ» ´õÀÌ»ó »ç¿ëÇÏÁö ¾Ê´Â´Ù¸é ¸Ş¸ğ¸®¿¡¼­ ÇØÁ¦
+		out.close(); // ìì›í•´ì œ: ìƒì„±í–ˆë˜ ìì›ì„ ë”ì´ìƒ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´ ë©”ëª¨ë¦¬ì—ì„œ í•´ì œ
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doPost() ½ÇÇàµÊ");
+		System.out.println("doPost() ì‹¤í–‰ë¨");
 	}
 }
